@@ -27,12 +27,17 @@ public class ActividadIfElseTarifa {
             System.out.println("la tarifa =60");
         } else {
             System.out.println("la tarifa es 80");
-        }else if (edad>=18){
+        }if (edad>=18) {
             if (esEstudiante) {
                 System.out.println("la tarifa es 90");
-            }else {
+            } else {
                 System.out.println("la tarifa es 120");
             }
+        }
+
+        System.out.println("tu edad es: "+ edad);
+        System.out.println("tu tarufa es"+ tarifa);
+        System.out.println("¿eres estudiante?"+esEstudiante);
 
 
     }
@@ -41,5 +46,4 @@ public class ActividadIfElseTarifa {
 
     }
 
-    }
-}
+
