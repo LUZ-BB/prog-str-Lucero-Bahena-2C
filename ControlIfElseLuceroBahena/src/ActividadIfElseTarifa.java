@@ -15,35 +15,36 @@ public class ActividadIfElseTarifa {
             return;
         }
 
-        System.out.println("¿eres estudiante?");
+        System.out.println("¿eres estudiante? (true/false) : ");
         esEstudiante = leer.nextBoolean();
 
         if (edad < 12) {
-            System.out.println("la tarifa = 50");
-
-        } else if (edad >= 12 || edad <= 17) {
+            tarifa = 50;
         }
-        if (esEstudiante) {
-            System.out.println("la tarifa =60");
-        } else {
-            System.out.println("la tarifa es 80");
-        }if (edad>=18) {
+        else if (edad >= 12 && edad <= 17) {
             if (esEstudiante) {
-                System.out.println("la tarifa es 90");
+                tarifa = 60;
             } else {
-                System.out.println("la tarifa es 120");
+                tarifa = 80;
+            }
+        }
+        else if (edad >= 18) {
+            if (esEstudiante) {
+                tarifa = 90;
+            } else {
+                tarifa = 120;
             }
         }
 
         System.out.println("tu edad es: "+ edad);
-        System.out.println("tu tarufa es"+ tarifa);
-        System.out.println("¿eres estudiante?"+esEstudiante);
+        System.out.println("tu tarifa es: "+ tarifa);
+        System.out.println("indicaste que: "+esEstudiante);
 
 
     }
 
 
 
-    }
+}
 
 
