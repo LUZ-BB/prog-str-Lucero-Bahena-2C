@@ -4,7 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ActividadBuenasPracticas/ActividadBuenasPracticas.iml" filepath="$PROJECT_DIR$/ActividadBuenasPracticas/ActividadBuenasPracticas.iml" />
       <module fileurl="file://$PROJECT_DIR$/ActividadRefactorBahenaSantanaLucero/ActividadRefactorBahenaSantanaLucero/ActividadRefactorBahenaSantanaLucero.iml" filepath="$PROJECT_DIR$/ActividadRefactorBahenaSantanaLucero/ActividadRefactorBahenaSantanaLucero/ActividadRefactorBahenaSantanaLucero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdivinaElNumeroLuceroBahena/AdivinaElNumeroLuceroBahena.iml" filepath="$PROJECT_DIR$/AdivinaElNumeroLuceroBahena/AdivinaElNumeroLuceroBahena.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ControlIfElseLuceroBahena/ControlIfElseLuceroBahena.iml" filepath="$PROJECT_DIR$/ControlIfElseLuceroBahena/ControlIfElseLuceroBahena.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CotizadorDeEnvios/CotizadorDeEnvios.iml" filepath="$PROJECT_DIR$/CotizadorDeEnvios/CotizadorDeEnvios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ GitConflictoBahenasantanaLucero/GitConflictoBahenaSantanaLucero/GitConflictoBahenasantanaLucero.iml" filepath="$PROJECT_DIR$/ GitConflictoBahenasantanaLucero/GitConflictoBahenaSantanaLucero/GitConflictoBahenasantanaLucero.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavadocBahenaSantanaLucero/JavadocBahenaSantanaLucero.iml" filepath="$PROJECT_DIR$/JavadocBahenaSantanaLucero/JavadocBahenaSantanaLucero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MenuDeConversion_LuceroBahena/MenuDeConversion_LuceroBahena.iml" filepath="$PROJECT_DIR$/MenuDeConversion_LuceroBahena/MenuDeConversion_LuceroBahena.iml" />
     </modules>
   </component>
 </project>
