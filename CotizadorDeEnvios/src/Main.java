@@ -5,7 +5,7 @@ public class Main {
         Inputvalidator validador = new Inputvalidator();
         ShippingCalculator calculadora = new ShippingCalculator();
         Ticket ticket = new Ticket();
-        double peso = leerDoubleEnRango(sc, "Ingresa el peso (0.1 - 50.0):", 0.1, 50.0, validador);
+        double peso = leerDoubleEnRango(sc, "Ingresa el peso en kg (0.1 - 50.0):", 0.1, 50.0, validador);
         int distancia = leerIntEnRango(sc, "Ingresa la distancia (1 - 2000):", 1, 2000, validador);
         int servicio = leerIntEnRango(sc, "Tipo servicio (1-Estandar 2-Express):", 1, 2, validador);
         boolean remota = leerBoolean(sc, "¿Zona remota? (true/false)", validador);

@@ -9,13 +9,13 @@ public double leerDoubleEnRango(Scanner sc, String msg, double min, double max){
             if (valor >=min && valor <=max){
                 return valor;
             }
+            System.out.println("el valor esta fuera de rango");
         }else {
             System.out.println("el valor no es numerico");
             sc.next();
         }
     }
 }
-
 public int  leerIntEnRango(Scanner sc, String msg, int min, int max){
     int valor;
     while (true) {
@@ -25,6 +25,7 @@ public int  leerIntEnRango(Scanner sc, String msg, int min, int max){
             if (valor >= min && valor <= max) {
                 return valor;
             }
+            System.out.println("el valor esta fuera de rango");
         } else {
             System.out.println("el valor no es un numero entero");
             sc.next();
@@ -35,13 +36,11 @@ public int  leerIntEnRango(Scanner sc, String msg, int min, int max){
 public boolean leerBoolean(Scanner sc, String msg) {
 while (true){
     System.out.println(msg);
-    String input = sc.next();
-    if (input.equals("true")){
-        return true;
-    }if (input.equals("false")){
-        return false;
+    if (sc.hasNextBoolean()){
+        return sc.hasNextBoolean();
     }else {
         System.out.println("responda con (true/false)");
+        sc.nextLine();
     }
 }
 

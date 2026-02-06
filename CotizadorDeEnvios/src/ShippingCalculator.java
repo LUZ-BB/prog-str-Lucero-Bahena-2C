@@ -1,30 +1,32 @@
 import java.util.Scanner;
 public class ShippingCalculator {
-   public double subtotal;
-   public double total;
-   public double iva;
+    public double subtotal;
+    public double total;
+    public double iva;
+    private final double PRECIO_ESTANDAR = 50;
+    private final double PRECIO_EXPRES = 90;
 
-    public double calcularSubtotal(double pesoKg, int distanciaKm, int tipoServicio, boolean zonaRemota){
-        double monto=0;
-        if (tipoServicio == 2) {
-            monto += 90.0;
+    public double calcularSubtotal(double pesoKg, int distanciaKm, int tipoServicio, boolean zonaRemota) {
+
+        this.subtotal = 0;
+        if (tipoServicio == 1) {
+            this.subtotal += PRECIO_ESTANDAR;
         } else {
-            monto += 50.0;
+            this.subtotal += PRECIO_EXPRES;
         }
-        monto += (pesoKg*12.0);
+        this.subtotal += (pesoKg * 12.0);
 
-        if (distanciaKm <= 50){
-            monto += 20;
-        } else if (distanciaKm<=200) {
-            monto +=60;
-        }else{
-            monto += 120;
+        if (distanciaKm <= 50) {
+            this.subtotal += 20;
+        } else if (distanciaKm <= 200) {
+            this.subtotal += 60;
+        } else {
+            this.subtotal += 120;
         }
 
-        if (zonaRemota){
-            monto *= 1.10;
+        if (zonaRemota) {
+            this.subtotal *= 1.10;
         }
-        this.subtotal = monto;
         return this.subtotal;
 
     }
@@ -38,5 +40,6 @@ public class ShippingCalculator {
         this.total = subtotal + iva;
         return this.total;
     }
+
 
 }
