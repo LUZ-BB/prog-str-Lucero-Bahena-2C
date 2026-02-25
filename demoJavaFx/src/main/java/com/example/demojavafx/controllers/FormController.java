@@ -50,6 +50,7 @@ public class FormController {
 
         }catch (Exception e){
             System.out.println("dato no numerico");
+            errores.add("El dato no es numerico");
         }
 
         if (errores.isEmpty()){
