@@ -1,0 +1,56 @@
+package com.example.demolistviewfile.services;
+
+import com.example.demolistviewfile.repositories.PersonFileRepository;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PersonService {
+
+    PersonFileRepository repo = new PersonFileRepository();
+
+    public List<String> loadForListView() throws IOException {
+        List<String> lines = repo.readAllLines();
+        List<String> result= new ArrayList<>();
+        for(String line : lines){
+          if(line==null || line.isBlank()) continue;
+
+          String[] parts= line.split(",");
+          String name=parts[0];
+          String email=parts[1];
+          String age=parts[2];
+          result.add(name+"-"+email+"-"+age);
+        }
+        return result;
+    }
+
+    public void addPerson(String name, String email, String age) throws IOException {
+        validate(name,email,age);
+        repo.addNewLine(name+","+email+","+age);
+    }
+
+
+    private void validate(String name, String email, String age){
+        if (name== null || name.isBlank() || name.length()<3){
+            throw new IllegalArgumentException("el nombre es incorrecto");
+        }
+        String em =(email==null) ? "" : email.trim();
+        if (em.isBlank() || !em.contains("@") || !em.contains(".")){
+            throw new IllegalArgumentException("el email es invalido");
+        }
+
+
+        int newNumber= Integer.parseInt(age);
+        if (newNumber<18){
+            throw new IllegalArgumentException("tiene que ser mayor de edad");
+        }
+        if (newNumber<0){
+            throw new IllegalArgumentException("la edad no puede ser negativa");
+        }
+
+
+
+
+    }
+}
