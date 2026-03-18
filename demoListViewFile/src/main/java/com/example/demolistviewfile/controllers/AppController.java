@@ -31,6 +31,15 @@ public class AppController {
     @FXML
     public void initialize(){
         listView.setItems(data);
+        listView.getSelectionModel().selectedItemProperty().addListener(
+                (obs, oldValue,newValue)->{
+                    String[] parts= newValue.split("-");
+                    txtName.setText(parts[0]);
+                    txtEmail.setText(parts[1]);
+                    txtAge.setText(parts[2]);
+
+                }
+        );
         loadFromFile();
     }
 
@@ -61,6 +70,48 @@ public class AppController {
             lblMsg.setText("es error de datos"+ e.getMessage());
             lblMsg.setStyle("-fx-text-fill: red");
 
+        }
+    }
+    @FXML
+    public void onUpdate(){
+        try {
+            int index = listView.getSelectionModel().getSelectedIndex();
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String age = txtAge.getText();
+            service.updatePerson(index,name,email,age);
+            loadFromFile();
+            txtName.clear();
+            txtEmail.clear();
+            txtAge.clear();
+            lblMsg.setText("Se actualizo el registro correctamente");
+        } catch (IOException e) {
+            lblMsg.setText("Hubo un error con el archivo");
+
+        }catch (IllegalArgumentException e){
+            lblMsg.setText("Hubo un error con los datos"+e.getMessage());
+        }
+    }
+
+
+    @FXML
+    public void onDelete(){
+        try {
+            int index = listView.getSelectionModel().getSelectedIndex();
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String age = txtAge.getText();
+            service.deletePerson(index);
+            loadFromFile();
+            txtName.clear();
+            txtEmail.clear();
+            txtAge.clear();
+            lblMsg.setText("Se elimino correctamente");
+        } catch (IOException e) {
+            lblMsg.setText("Hubo un error con el archivo");
+
+        }catch (IllegalArgumentException e){
+            lblMsg.setText("Hubo un error con los datos"+e.getMessage());
         }
     }
 
